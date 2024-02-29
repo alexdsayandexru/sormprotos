@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package sorm;
 
-option go_package = "sorm.v1;sormv1";
+option go_package = "github.com/alexdsayandexru/sormprotos/gen/go/sorm;sorm";
 
 message SendRequest {
     string text = 1;

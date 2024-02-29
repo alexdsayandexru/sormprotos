@@ -4,7 +4,7 @@
 // - protoc             v4.25.3
 // source: sorm/sorm.proto
 
-package sormv1
+package sorm
 
 import (
 	context "context"
