@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v4.25.3
-// source: sorm/sorm.proto
+// source: sorm.proto
 
-package sorm
+package sormprotos
 
 import (
 	context "context"
@@ -35,7 +35,7 @@ func NewSormDataCollectionServiceClient(cc grpc.ClientConnInterface) SormDataCol
 
 func (c *sormDataCollectionServiceClient) Send(ctx context.Context, in *SendRequest, opts ...grpc.CallOption) (*SendResponse, error) {
 	out := new(SendResponse)
-	err := c.cc.Invoke(ctx, "/sorm.SormDataCollectionService/Send", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sormprotos.SormDataCollectionService/Send", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -81,7 +81,7 @@ func _SormDataCollectionService_Send_Handler(srv interface{}, ctx context.Contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sorm.SormDataCollectionService/Send",
+		FullMethod: "/sormprotos.SormDataCollectionService/Send",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(SormDataCollectionServiceServer).Send(ctx, req.(*SendRequest))
@@ -93,7 +93,7 @@ func _SormDataCollectionService_Send_Handler(srv interface{}, ctx context.Contex
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var SormDataCollectionService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "sorm.SormDataCollectionService",
+	ServiceName: "sormprotos.SormDataCollectionService",
 	HandlerType: (*SormDataCollectionServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -102,5 +102,5 @@ var SormDataCollectionService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "sorm/sorm.proto",
+	Metadata: "sorm.proto",
 }

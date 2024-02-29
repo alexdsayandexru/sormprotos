@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package sormprotos;
+
+option go_package = "github.com/alexdsayandexru/sormprotos/gen;sormprotos";
+
+message SendRequest {
+    string Text = 1;
+    string Subtext = 2;
+}
+
+message SendResponse {
+    string Text = 1;
+    string Subtext = 2;
+}
+
+service SormDataCollectionService {
+    rpc Send (SendRequest) returns (SendResponse);
+}
