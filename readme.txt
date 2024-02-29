@@ -5,5 +5,5 @@ $ go env
 $ echo $PATH
 $ export PATH="$PATH:$(go env GOPATH)/bin"
 
-git tag v2.0.1
-git push origin v2.0.1
+git tag v3.0.1
+git push origin v3.0.1
